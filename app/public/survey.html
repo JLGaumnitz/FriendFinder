@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+
+    <!--Favicon coding-->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>Rodent Quiz Statements</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron mt-2" style="color:white;background-color:rgb(233, 145, 86);">
+            <h1 class="display-4"><img src="./images/chinchilla.jpg" alt="chinchilla" width="300" height="200"> What
+                rodent would you be?</h1>
+            <hr class="my-4">
+            <p class="lead">Choose how much you agree or disagree with each statement.</p>
+            <p class="lead">Then press "Submit" at the bottom and find out what kind of rodent you would be.</p>
+        </div>
+
+        <div class="container">
+            <form>
+                <div class="row">
+                    <div class="col-lg-6 mb-2 pb-4">
+                        <div class="card"
+                            style="height:100%;background-color:rgb(233, 145, 86);color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Name (required)</h5>
+                                <input id="name" type="text" class="form-control" required="true">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 1</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">My mind and hands are always busy, busy with projects.
+                                    </p>
+                                </div>
+                                <select required="true" class="form-control" id="q1">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 2</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I prefer to stay in the shadows.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q2">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 3</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I am somewhat nocturnal.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q3">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 4</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I like to collect items and have a hard time giving them up.
+                                    </p>
+                                </div>
+                                <select required="true" class="form-control" id="q4">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 5</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I am always behind and feel like I’m running on an exercise
+                                        wheel.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q5">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 6</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I am offended by people who judge others by their appearance.
+                                    </p>
+                                </div>
+                                <select required="true" class="form-control" id="q6">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 7</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I am always planning for the future.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q7">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 8</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I prefer to be near water whenever I can be.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q8">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 9</h5>
+                                <div id="maxHeight" class="mb-2 textBox">
+                                    <p class="card-text">I am quick to learn new things and live for rewards.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q9">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 mb-2">
+                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Statement 10</h5>
+                                <div class="mb-2 textBox">
+                                    <p class="card-text">I cannot resist a good brie.</p>
+                                </div>
+                                <select required="true" class="form-control" id="q10">
+                                    <option value="">Do you agree?</option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2 (Disagree)</option>
+                                    <option value="3">3 (Neutral)</option>
+                                    <option value="4">4 (Agree)</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 text-center my-auto"><img src="./images/woodchuck.jpg" alt="woodchuck"
+                            width="200" height="200"></div>
+                </div>
+                <div class="row">
+                    <input type="submit" id="submit" class="btn btn-block"
+                        style="background-color:rgb(233, 145, 86);color:white;" />
+
+                    <button id="success" disabled class="btn btn-success btn-block" style="display:none;"><i
+                            class="fas fa-check-circle"></i></button>
+                </div>
+            </form>
+
+            <!-- Modal -->
+            <button style="display:none;" id="modalButton" data-toggle="modal" data-target="#modal"></button>
+            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalTitle">You have a rodent match!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div id="modalBody" class="modal-body">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal -->
+            <button style="display:none;" id="modalErrorButton" data-toggle="modal" data-target="#modalError"></button>
+            <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Rats!</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Please try again.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-lg-4 mb-2">
+                    <p><a href="/api/friends" target="_blank">API Rodents List</a> || <a
+                            href="https://github.com/JLGaumnitz/FriendFinder" target="_blank">GitHub Repository</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================================== -->
+    <script>
+        $(".textBox").css("height", $("#maxHeight").height());
+        
+        $("form").submit(function (event) {
+            event.preventDefault();
+
+            var yourScore = [parseInt($("#q1").val().trim()), parseInt($("#q2").val().trim()), parseInt($("#q3").val().trim()), parseInt($("#q4").val().trim()), parseInt($("#q5").val().trim()), parseInt($("#q6").val().trim()), parseInt($("#q7").val().trim()), parseInt($("#q8").val().trim()), parseInt($("#q9").val().trim()), parseInt($("#q10").val().trim())];
+
+            var newFriend = {
+                name: $("#name").val().trim(),
+                photo: $("#photo"),
+                scores: yourScore
+            };
+
+
+            $.ajax({ url: "/api/friends", method: "GET" })
+                 .then(function(data) {
+                var isDuplicate = false;
+                for (var i = 0; i < data.length; i++) {
+                    for (var x = 0; x < data[i].scores.length; x++) {
+                        data[i].scores[x] = parseInt(data[i].scores[x]);
+                    }
+                    if (JSON.stringify(data[i]) === JSON.stringify(newFriend)) {
+                        isDuplicate = true;
+                    }
+                }
+
+                if (isDuplicate === false) {
+                    $.ajax({ url: "/api/friends", method: "POST" })
+                    .then(function (data) {
+                            $.get("/api/friends", function (data) {
+                                var compatibleFriends = [];
+                                for (var i = 0; i < data.length; i++) {
+                                    if (data[i].name !== $("#name").val().trim()) {
+                                        var friendScore = data[i].scores;
+                                        var compatibility = 0;
+                                        for (var x = 0; x < friendScore.length; x++) {
+                                            var difference = Math.abs(parseInt(friendScore[x]) - parseInt(yourScore[x]));
+                                            compatibility = compatibility + difference;
+                                        }
+                                        compatibleFriends[i] = compatibility;
+                                    }
+                                }
+                                var min = compatibleFriends.reduce((a, b) => Math.min(a, b));
+                                var modalBody = $("<div>");
+                                var matchName = $(`<h6>${data[compatibleFriends.indexOf(min)].name}</h6>`);
+
+                                $(modalBody).append(matchName);
+                                var matchImg = $(`<img src="${data[compatibleFriends.indexOf(min)].photo}" style="max-width:400px;"/>`);
+
+                                $(modalBody).append(matchImg);
+                                $("#modalBody").empty();
+                                $("#modalBody").append(modalBody);
+                                $("#modalButton").trigger("click");
+                                $("#submit").hide();
+                                $("#success").show();
+                                setTimeout(function () {
+                                    $("#success").hide();
+                                    $("#submit").show();
+                                }, 3000);
+                            });
+                        });
+                }
+                else {
+                    $("#modalErrorButton").trigger("click");
+                }
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
