@@ -6,29 +6,35 @@
 
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!--Favicon coding-->
     <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+    <title>What Rodent Are You? | Quiz</title>
 
+    <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <!-- My CSS stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <!-- jquery / NOTE: the "slim build" that comes with Bootstrap won't work per Stack Overflow: https://stackoverflow.com/questions/18271251/typeerror-ajax-is-not-a-function -->
+    
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="style.css">
-
-    <title>Rodent Quiz Statements</title>
 </head>
 
 <body>
@@ -53,14 +59,25 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-lg-6 mb-2 pb-4"">
+                        <div class="card"
+                            style="height:100%;background-color:rgb(233, 145, 86);color:white;border:none;">
+                            <div class="card-body">
+                                <h5 class="card-title">Link to Photo Image (required)</h5>
+                                <input id="photoLink" type="text" class="form-control" required="true">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Start of 10 Statements -->
                 <div class="row">
                     <div class="col-lg-3 mb-2">
                         <div class="card" style="height:100%;background-color:black;color:white;border:none;">
                             <div class="card-body">
                                 <h5 class="card-title">Statement 1</h5>
                                 <div class="mb-2 textBox">
-                                    <p class="card-text">My mind and hands are always busy, busy with projects.
+                                    <p class="card-text">I am always busy, busy with projects.
                                     </p>
                                 </div>
                                 <select required="true" class="form-control" id="q1">
@@ -212,7 +229,7 @@
                         <div class="card" style="height:100%;background-color:black;color:white;border:none;">
                             <div class="card-body">
                                 <h5 class="card-title">Statement 9</h5>
-                                <div id="maxHeight" class="mb-2 textBox">
+                                <div class="mb-2 textBox">
                                     <p class="card-text">I am quick to learn new things and live for rewards.</p>
                                 </div>
                                 <select required="true" class="form-control" id="q9">
@@ -247,132 +264,66 @@
                     <div class="col-lg-3 text-center my-auto"><img src="./images/woodchuck.jpg" alt="woodchuck"
                             width="200" height="200"></div>
                 </div>
-                <div class="row">
-                    <input type="submit" id="submit" class="btn btn-block"
-                        style="background-color:rgb(233, 145, 86);color:white;" />
+                <!-- End of 10 Statements -->
 
-                    <button id="success" disabled class="btn btn-success btn-block" style="display:none;"><i
-                            class="fas fa-check-circle"></i></button>
+                <!-- Submit Button -->
+                <button class="btn btn-block" style="color:white;background-color:rgb(233, 145, 86);" type="submit" id="submitBtn" data-toggle="modal" data-target="#exampleModal">Submit Your Responses</button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Based on your response, you most closely match this rodent:</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <h3 id="matchName"></h3>
+                                <img id="matchImage" src="" alt="" width="300">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
 
-            <!-- Modal -->
-            <button style="display:none;" id="modalButton" data-toggle="modal" data-target="#modal"></button>
-            <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="modalTitle">You have a rodent match!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div id="modalBody" class="modal-body">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Modal -->
-            <button style="display:none;" id="modalErrorButton" data-toggle="modal" data-target="#modalError"></button>
-            <div class="modal fade" id="modalError" tabindex="-1" role="dialog" aria-labelledby="modalTitle"
-                aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Rats!</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <p>Please try again.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
             <div class="row mt-4">
-                <div class="col-lg-4 mb-2">
+                <div class="col-lg-12 class=" aria-hidden="true">
                     <p><a href="/api/friends" target="_blank">API Rodents List</a> || <a
                             href="https://github.com/JLGaumnitz/FriendFinder" target="_blank">GitHub Repository</a></p>
                 </div>
             </div>
-        </div>
-    </div>
+</body>
 
-    <!-- ============================================================================== -->
-    <script>
-        $(".textBox").css("height", $("#maxHeight").height());
-        
-        $("form").submit(function (event) {
-            event.preventDefault();
+<script type="text/javascript">
 
-            var yourScore = [parseInt($("#q1").val().trim()), parseInt($("#q2").val().trim()), parseInt($("#q3").val().trim()), parseInt($("#q4").val().trim()), parseInt($("#q5").val().trim()), parseInt($("#q6").val().trim()), parseInt($("#q7").val().trim()), parseInt($("#q8").val().trim()), parseInt($("#q9").val().trim()), parseInt($("#q10").val().trim())];
+    $("#submitBtn").on("click", function (event) {
+        event.preventDefault();
 
-            var newFriend = {
-                name: $("#name").val().trim(),
-                photo: $("#photo"),
-                scores: yourScore
-            };
+        var answersArray = [];
+        for (i = 1; i < 11; i++) {
+            let question = document.getElementById(`q${i}`);
+            let getValue = question.options[question.selectedIndex].value;
 
+            answersArray.push(parseInt(getValue));
+        };
 
-            $.ajax({ url: "/api/friends", method: "GET" })
-                 .then(function(data) {
-                var isDuplicate = false;
-                for (var i = 0; i < data.length; i++) {
-                    for (var x = 0; x < data[i].scores.length; x++) {
-                        data[i].scores[x] = parseInt(data[i].scores[x]);
-                    }
-                    if (JSON.stringify(data[i]) === JSON.stringify(newFriend)) {
-                        isDuplicate = true;
-                    }
-                }
+        let newRodent = {
+            name: $("#name").val().trim(),
+            photo: $("#photoLink").val().trim(),
+            scores: answersArray
+        };
 
-                if (isDuplicate === false) {
-                    $.ajax({ url: "/api/friends", method: "POST" })
-                    .then(function (data) {
-                            $.get("/api/friends", function (data) {
-                                var compatibleFriends = [];
-                                for (var i = 0; i < data.length; i++) {
-                                    if (data[i].name !== $("#name").val().trim()) {
-                                        var friendScore = data[i].scores;
-                                        var compatibility = 0;
-                                        for (var x = 0; x < friendScore.length; x++) {
-                                            var difference = Math.abs(parseInt(friendScore[x]) - parseInt(yourScore[x]));
-                                            compatibility = compatibility + difference;
-                                        }
-                                        compatibleFriends[i] = compatibility;
-                                    }
-                                }
-                                var min = compatibleFriends.reduce((a, b) => Math.min(a, b));
-                                var modalBody = $("<div>");
-                                var matchName = $(`<h6>${data[compatibleFriends.indexOf(min)].name}</h6>`);
-
-                                $(modalBody).append(matchName);
-                                var matchImg = $(`<img src="${data[compatibleFriends.indexOf(min)].photo}" style="max-width:400px;"/>`);
-
-                                $(modalBody).append(matchImg);
-                                $("#modalBody").empty();
-                                $("#modalBody").append(modalBody);
-                                $("#modalButton").trigger("click");
-                                $("#submit").hide();
-                                $("#success").show();
-                                setTimeout(function () {
-                                    $("#success").hide();
-                                    $("#submit").show();
-                                }, 3000);
-                            });
-                        });
-                }
-                else {
-                    $("#modalErrorButton").trigger("click");
-                }
-            });
+        $.post("/api/friends", newRodent, function (data) {
+            console.log(data.name);
+            $("#matchName").text(data.name);
+            $("#matchImage").attr("src", data.photo);
+            $("#resultsModal").modal('toggle');
         });
-
-    </script>
+    })
+</script>
 
 </body>
 

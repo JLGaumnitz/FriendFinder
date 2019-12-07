@@ -1,12 +1,13 @@
-var express = require("express");
-var bodyParser = require("body-parser");
+const express = require("express");
 
-var app = express();
+const app = express();
 
-var PORT = process.env.PORT || 8080;
+let PORT = process.env.PORT || 8080;
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// Middleware
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+app.use(express.static("./app/public"));
 
 // Routes
 require("./app/routing/apiRoutes")(app);

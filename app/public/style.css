@@ -2,6 +2,6 @@
     font-size:14px;
 }
 
-#submit {
-    
+#submitBtn:hover {
+    background-color: black;
   }
