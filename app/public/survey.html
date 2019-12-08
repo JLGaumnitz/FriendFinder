@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="style.css">
 
 
-    <!-- jquery / NOTE: the "slim build" that comes with Bootstrap won't work per Stack Overflow: https://stackoverflow.com/questions/18271251/typeerror-ajax-is-not-a-function -->
-    
+    <!-- jquery / NOTE: I found out that the "slim build" that comes with Bootstrap won't work per Stack Overflow: https://stackoverflow.com/questions/18271251/typeerror-ajax-is-not-a-function -->
+
     <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
@@ -43,7 +43,7 @@
             <h1 class="display-4"><img src="./images/chinchilla.jpg" alt="chinchilla" width="300" height="200"> What
                 rodent would you be?</h1>
             <hr class="my-4">
-            <p class="lead">Choose how much you agree or disagree with each statement.</p>
+            <p class="lead">Choose how much you agree or disagree with each statement on a scale of 1 to 5, with 1 being "Strongly disagree" and 5 being "Strongly agree."</p>
             <p class="lead">Then press "Submit" at the bottom and find out what kind of rodent you would be.</p>
         </div>
 
@@ -60,241 +60,243 @@
                         </div>
                     </div>
                     <div class="col-lg-6 mb-2 pb-4"">
-                        <div class="card"
-                            style="height:100%;background-color:rgb(233, 145, 86);color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Link to Photo Image (required)</h5>
-                                <input id="photoLink" type="text" class="form-control" required="true">
-                            </div>
+                        <div class=" card"
+                        style="height:100%;background-color:rgb(233, 145, 86);color:white;border:none;">
+                        <div class="card-body">
+                            <h5 class="card-title">Link to Photo Image (required)</h5>
+                            <input id="photoLink" type="text" class="form-control" required="true">
                         </div>
                     </div>
                 </div>
+        </div>
 
-                <!-- Start of 10 Statements -->
-                <div class="row">
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 1</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I am always busy, busy with projects.
-                                    </p>
-                                </div>
-                                <select required="true" class="form-control" id="q1">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
+        <!-- Start of 10 Statements -->
+        <div class="row">
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 1</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I am always busy, busy with projects.
+                            </p>
                         </div>
+                        <select required="true" class="form-control" id="q1">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
                     </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 2</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I prefer to stay in the shadows.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q2">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 3</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I am somewhat nocturnal.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q3">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 4</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I like to collect items and have a hard time giving them up.
-                                    </p>
-                                </div>
-                                <select required="true" class="form-control" id="q4">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 5</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I am always behind and feel like I’m running on an exercise
-                                        wheel.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q5">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 6</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I am offended by people who judge others by their appearance.
-                                    </p>
-                                </div>
-                                <select required="true" class="form-control" id="q6">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 7</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I am always planning for the future.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q7">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 8</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I prefer to be near water whenever I can be.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q8">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 9</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I am quick to learn new things and live for rewards.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q9">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 mb-2">
-                        <div class="card" style="height:100%;background-color:black;color:white;border:none;">
-                            <div class="card-body">
-                                <h5 class="card-title">Statement 10</h5>
-                                <div class="mb-2 textBox">
-                                    <p class="card-text">I cannot resist a good brie.</p>
-                                </div>
-                                <select required="true" class="form-control" id="q10">
-                                    <option value="">Do you agree?</option>
-                                    <option value="1">1 (Strongly Disagree)</option>
-                                    <option value="2">2 (Disagree)</option>
-                                    <option value="3">3 (Neutral)</option>
-                                    <option value="4">4 (Agree)</option>
-                                    <option value="5">5 (Strongly Agree)</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 text-center my-auto"><img src="./images/woodchuck.jpg" alt="woodchuck"
-                            width="200" height="200"></div>
-                </div>
-                <!-- End of 10 Statements -->
-
-                <!-- Submit Button -->
-                <button class="btn btn-block" style="color:white;background-color:rgb(233, 145, 86);" type="submit" id="submitBtn" data-toggle="modal" data-target="#exampleModal">Submit Your Responses</button>
-
-                <!-- Modal -->
-                <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog"
-                    aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Based on your response, you most closely match this rodent:</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <h3 id="matchName"></h3>
-                                <img id="matchImage" src="" alt="" width="300">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-
-            <div class="row mt-4">
-                <div class="col-lg-12 class=" aria-hidden="true">
-                    <p><a href="/api/friends" target="_blank">API Rodents List</a> || <a
-                            href="https://github.com/JLGaumnitz/FriendFinder" target="_blank">GitHub Repository</a></p>
                 </div>
             </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 2</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I prefer to stay in the shadows.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q2">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 3</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I am somewhat nocturnal.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q3">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 4</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I like to collect items and have a hard time giving them up.
+                            </p>
+                        </div>
+                        <select required="true" class="form-control" id="q4">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 5</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I am always behind and feel like I’m running on an exercise
+                                wheel.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q5">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 6</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I am offended by people who judge others by their appearance.
+                            </p>
+                        </div>
+                        <select required="true" class="form-control" id="q6">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 7</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I am always planning for the future.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q7">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 8</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I prefer to be near water whenever I can be.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q8">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 9</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I am quick to learn new things and live for rewards.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q9">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 mb-2">
+                <div class="card" style="height:100%;background-color:black;color:white;border:none;">
+                    <div class="card-body">
+                        <h5 class="card-title">Statement 10</h5>
+                        <div class="mb-2 textBox">
+                            <p class="card-text">I cannot resist a good brie.</p>
+                        </div>
+                        <select required="true" class="form-control" id="q10">
+                            <option value="">Do you agree?</option>
+                            <option value="1">1 (Strongly Disagree)</option>
+                            <option value="2">2 (Disagree)</option>
+                            <option value="3">3 (Neutral)</option>
+                            <option value="4">4 (Agree)</option>
+                            <option value="5">5 (Strongly Agree)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 text-center my-auto"><img src="./images/woodchuck.jpg" alt="woodchuck" width="200"
+                    height="200"></div>
+        </div>
+        <!-- End of 10 Statements -->
+
+        <!-- Submit Button -->
+        <button class="btn btn-block" style="color:white;background-color:rgb(233, 145, 86);" type="submit"
+            id="submitBtn" data-toggle="modal" data-target="#exampleModal">Submit Your Responses</button>
+
+        <!-- Modal displaying the Best Match -->
+
+        <!--The "tabindex" is explained here: https://stackoverflow.com/questions/32911355/whats-the-tabindex-1-in-bootstrap-for -->
+        <div class="modal fade" id="resultsModal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Based on your responses, you most closely match
+                            this adorable rodent:</h5>
+                        <button type="button" class="close" data-dismiss="modal">
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h3 id="matchName"></h3>
+                        <img id="matchImage" src="" alt="" width="300">
+                    </div>
+                </div>
+            </div>
+        </div>
+        </form>
+
+        <div class="row mt-4">
+            <div class="col-lg-12 class=" aria-hidden="true">
+                <p><a href="/api/friends" target="_blank">API Rodents List</a> || <a
+                        href="https://github.com/JLGaumnitz/FriendFinder" target="_blank">GitHub Repository</a></p>
+            </div>
+        </div>
 </body>
 
 <script type="text/javascript">
@@ -302,7 +304,7 @@
     $("#submitBtn").on("click", function (event) {
         event.preventDefault();
 
-        var answersArray = [];
+        let answersArray = [];
         for (i = 1; i < 11; i++) {
             let question = document.getElementById(`q${i}`);
             let getValue = question.options[question.selectedIndex].value;
