@@ -2,10 +2,12 @@ const rodentData = require("../data/friends");
 
 module.exports = function(app)
 {
+    // Get route will display a JSON of all possible friends.
     app.get("/api/friends", function(req,res) {
         return res.json(rodentData);
     });
 
+    // Post route used to handle incoming survey results. This route also handles the compatibility logic.
     app.post("/api/friends", function(req,res) {
         rodentData.push(req.body);
         
@@ -28,9 +30,7 @@ module.exports = function(app)
             for (let i = 0; i < 10; i++) {
                 totalDifference += Math.abs(rodentData[j].scores[i] - currentUserScores[i]);
             }
-
             addToTotalDiffs();
-
         };
 
         function addToTotalDiffs() {
@@ -53,7 +53,6 @@ module.exports = function(app)
 
                 bestMatch.bestSpot = allTotalDiffs[k].referenceSpot;
                 console.log(bestMatch.bestSpot);
-
             }
         }
 
