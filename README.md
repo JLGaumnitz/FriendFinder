@@ -13,17 +13,17 @@ GitHub repository: https://github.com/JLGaumnitz/FriendFinder
 
 Simply go to the Heroku link above and click on the "Start Quiz" button at the bottom of the home page.
 
-![Home Page](./app/public/images/Rodent_Quiz_Home_Page.PNG)
+![Home Page](./images_for_README/Rodent_Quiz_Home_Page.PNG)
 
 Once on the quiz page, enter your name and a link to a photo in the appropriate fields. Choose from the dropdown menus for all 10 statements and press the "Submit" button at the bottom of the page.
 
-![Quiz Page](./app/public/images/Rodent_Quiz_Page.PNG)
+![Quiz Page](./images_for_README/Rodent_Quiz_Page.PNG)
 
 The best match will appear in a modal dialogue box. Press the "x" to close the box.
 
-![Example 1 of Modal with Best Match](./app/public/images/Rodent_Match_Modal_Ex1.PNG)
+![Example 1 of Modal with Best Match](./images_for_README/Rodent_Match_Modal_Ex1.PNG)
 
-![Example 2 of Modal with Best Match](./app/public/images/Rodent_Match_Modal_Ex2.PNG)
+![Example 2 of Modal with Best Match](./images_for_README/Rodent_Match_Modal_Ex2.PNG)
 
 <strong>To create the app from my files in my GitHub repository:</strong> 
 
