@@ -3,7 +3,7 @@ created by Jennifer Gaumnitz
 - - - -
 A compatibility-based "FriendFinder-like" application. This full-stack mobile-responsive site takes in results from a quiz, then compares the answers with those from a prepopulated array of rodents. The app will then calculate the best match to the user's responses and display the name and picture of that rodent.
 - - - -
-Heroku deployed app: ADD LINK
+Heroku deployed app: https://quiet-ridge-65384.herokuapp.com/
 
 GitHub repository: https://github.com/JLGaumnitz/FriendFinder
 - - - -
