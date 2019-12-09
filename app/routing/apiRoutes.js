@@ -59,12 +59,12 @@ module.exports = function(app)
 
         console.log(bestMatch.bestSpot);
 
-        let bestMatchPerson = {};
+        let bestMatchRodent = {};
 
-        bestMatchPerson = rodentData[bestMatch.bestSpot];
+        bestMatchRodent = rodentData[bestMatch.bestSpot];
 
-        console.log(bestMatchPerson);
+        console.log(bestMatchRodent);
 
-        res.json(bestMatchPerson);
+        res.json(bestMatchRodent);
     });
 }
